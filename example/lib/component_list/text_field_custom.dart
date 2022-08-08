@@ -11,7 +11,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   Widget build(BuildContext context) {
     TextEditingController _namaPelaporCtrl = TextEditingController();
     bool readOnlyNamePelapor = false;
-    validateEmpty(String value) {
+    validateEmpty(String? value) {
       return 'null';
     }
 

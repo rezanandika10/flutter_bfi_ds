@@ -1,14 +1,14 @@
 part of flutter_ds_bfi;
 
 class DSGhostButton extends StatelessWidget {
-  final String keyValue;
-  final GestureTapCallback onTap;
-  final String text;
-  final BorderRadius borderRadiusDefault = BorderRadius.circular(8);
-  final double fontSize;
-  final FontWeight fontWeight;
-  final DSButtonState buttonState;
-  final Color color;
+  final String? keyValue;
+  final GestureTapCallback? onTap;
+  final String? text;
+  final BorderRadius? borderRadiusDefault = BorderRadius.circular(8);
+  final double? fontSize;
+  final FontWeight? fontWeight;
+  final DSButtonState? buttonState;
+  final Color? color;
 
   DSGhostButton(
       {this.keyValue,
@@ -50,7 +50,7 @@ class DSGhostButton extends StatelessWidget {
                 children: <Widget>[
                   Flexible(
                     child: Text(
-                      text,
+                      text!,
                       style: TextStyle(
                           fontFamily: DSFont.Poppins,
                           color: buttonState == DSButtonState.Ghost

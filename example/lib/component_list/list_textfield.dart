@@ -21,8 +21,8 @@ class _ListTextFieldState extends State<ListTextField> {
           maxValue: 10,
           onChanged: () {
             for (var x in listFieldModel) {
-              if (x.textEditingController.text == '12345') {
-                x.textEditingController.text = 'NARUTO';
+              if (x.textEditingController!.text == '12345') {
+                x.textEditingController!.text = 'NARUTO';
               }
             }
           },

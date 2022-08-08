@@ -1,12 +1,12 @@
 part of flutter_ds_bfi;
 
 class DSText extends StatelessWidget {
-  final String data;
-  final String keyValue;
-  final TextAlign textAlign;
-  final TextStyle textStyle;
-  final int maxLines;
-  final TextOverflow textOverflow;
+  final String? data;
+  final String? keyValue;
+  final TextAlign? textAlign;
+  final TextStyle? textStyle;
+  final int? maxLines;
+  final TextOverflow? textOverflow;
 
   DSText(
       {this.data,

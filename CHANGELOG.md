@@ -102,3 +102,6 @@ Add New DS Card Label
 
 Add New DS Card Label, Fixing Bug
 
+## [0.0.2+26] - 8 August 2022.
+
+Add Null Safety from flutter_ds_bfi

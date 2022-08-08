@@ -1,13 +1,17 @@
 part of flutter_ds_bfi;
 
 class DSCardProductInformation extends StatelessWidget {
-  final String image;
-  final String title;
-  final String subtitle;
-  final String subtitle2;
+  final String? image;
+  final String? title;
+  final String? subtitle;
+  final String? subtitle2;
 
-  const DSCardProductInformation(
-      {this.title, this.subtitle, this.image, this.subtitle2});
+  const DSCardProductInformation({
+    this.title,
+    this.subtitle,
+    this.image,
+    this.subtitle2,
+  });
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,7 +38,7 @@ class DSCardProductInformation extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.network(
-                image,
+                image!,
                 width: 32,
               )
             ],

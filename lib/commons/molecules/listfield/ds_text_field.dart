@@ -1,6 +1,15 @@
 part of flutter_ds_bfi;
 
 class DSTextField extends StatelessWidget {
+  final VoidCallback? onPressedEdit;
+  final VoidCallback? onPressedDelete;
+  final FormFieldValidator<String>? validator;
+  final VoidCallback? onChanged;
+  final String? text;
+  final ListFieldModel? listFieldModel;
+  final bool? isEdit;
+  final String? id;
+
   DSTextField(
       {this.onPressedEdit,
       this.onPressedDelete,
@@ -11,23 +20,13 @@ class DSTextField extends StatelessWidget {
       this.id,
       this.isEdit: true});
 
-  final Function onPressedEdit;
-  final Function onPressedDelete;
-  final Function validator;
-  final VoidCallback onChanged;
-
-  final String text;
-  final ListFieldModel listFieldModel;
-  final bool isEdit;
-  final String id;
-
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          text,
+          text!,
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
         ),
         Container(
@@ -36,12 +35,12 @@ class DSTextField extends StatelessWidget {
           child: TextFormField(
             enableInteractiveSelection: false,
             style: const TextStyle(fontSize: 14.0, color: Colors.black),
-            controller: listFieldModel.textEditingController,
+            controller: listFieldModel!.textEditingController,
             onChanged: (value) {
-              onChanged();
+              onChanged!();
             },
             decoration: InputDecoration(
-                enabled: listFieldModel.isEdit,
+                enabled: listFieldModel!.isEdit!,
                 counterText: '',
                 hintText: 'NIK / Nama',
                 isDense: true,

@@ -1,13 +1,13 @@
 part of flutter_ds_bfi;
 
 class DSCardLabel extends StatelessWidget {
-  final String label;
-  final String title;
-  final Widget header;
-  final Widget content;
-  final Widget footer;
-  final double width;
-  final double height;
+  final String? label;
+  final String? title;
+  final Widget? header;
+  final Widget? content;
+  final Widget? footer;
+  final double? width;
+  final double? height;
 
   const DSCardLabel(
       {this.label,
@@ -82,7 +82,7 @@ class DSCardLabel extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [header, content, footer],
+                children: [header!, content!, footer!],
               ),
             )
           ],

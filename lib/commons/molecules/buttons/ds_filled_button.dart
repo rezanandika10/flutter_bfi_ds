@@ -1,14 +1,14 @@
 part of flutter_ds_bfi;
 
 class DSFilledButton extends StatelessWidget {
-  final String keyValue;
-  final GestureTapCallback onTap;
-  final String text;
-  final BorderRadius borderRadiusDefault = BorderRadius.circular(8);
-  final double fontSize;
-  final FontWeight fontWeight;
-  final DSButtonState buttonState;
-  final Color color;
+  final String? keyValue;
+  final GestureTapCallback? onTap;
+  final String? text;
+  final BorderRadius? borderRadiusDefault = BorderRadius.circular(8);
+  final double? fontSize;
+  final FontWeight? fontWeight;
+  final DSButtonState? buttonState;
+  final Color? color;
 
   DSFilledButton(
       {this.keyValue,
@@ -52,7 +52,7 @@ class DSFilledButton extends StatelessWidget {
                 children: <Widget>[
                   Flexible(
                     child: Text(
-                      text,
+                      text!,
                       style: TextStyle(
                           fontFamily: DSFont.Poppins,
                           color: Colors.white,

@@ -1,15 +1,15 @@
 part of flutter_ds_bfi;
 
 class DSCard extends StatelessWidget {
-  final String noKontrak;
-  final String licensePlate;
-  final Widget angsuranPerBulan;
-  final Widget jatuhTempo;
-  final String bgCard;
-  final String icon;
-  final String titleAngsuran;
-  final String arrowUp;
-  final GestureTapCallback onTap;
+  final String? noKontrak;
+  final String? licensePlate;
+  final Widget? angsuranPerBulan;
+  final Widget? jatuhTempo;
+  final String? bgCard;
+  final String? icon;
+  final String? titleAngsuran;
+  final String? arrowUp;
+  final GestureTapCallback? onTap;
   const DSCard(
       {this.noKontrak,
       this.licensePlate,
@@ -39,7 +39,7 @@ class DSCard extends StatelessWidget {
           )
         ],
         image: DecorationImage(
-          image: AssetImage(bgCard),
+          image: AssetImage(bgCard!),
           fit: BoxFit.fill,
         ),
       ),
@@ -63,7 +63,7 @@ class DSCard extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.all(4.0),
                           child: Image.asset(
-                            icon,
+                            icon!,
                             width: 32,
                           ),
                         ),
@@ -99,7 +99,7 @@ class DSCard extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 32.0),
                     child: Container(
                       child: Text(
-                        titleAngsuran,
+                        titleAngsuran!,
                         style: TextStyle(fontSize: 12, color: Colors.white),
                       ),
                     ),
@@ -111,7 +111,7 @@ class DSCard extends StatelessWidget {
                       onTap: onTap,
                       child: Row(
                         children: [
-                          angsuranPerBulan,
+                          angsuranPerBulan!,
                           SizedBox(width: 8),
                         ],
                       ),

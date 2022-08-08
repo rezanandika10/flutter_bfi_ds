@@ -1,6 +1,17 @@
 part of flutter_ds_bfi;
 
 class DSListTextField extends StatefulWidget {
+  final Function? onPressedEdit;
+  final Function? onPressedDelete;
+  final Function? validator;
+  final Function? onChanged;
+  final int? maxValue;
+  final List<ListFieldModel>? listFieldModel;
+  final String? text;
+  final TextEditingController? textEditingController;
+  final bool? isEdit;
+  final List<dynamic>? model;
+
   DSListTextField(
       {this.onPressedEdit,
       this.onPressedDelete,
@@ -13,23 +24,12 @@ class DSListTextField extends StatefulWidget {
       this.maxValue: 20,
       this.isEdit: true});
 
-  final Function onPressedEdit;
-  final Function onPressedDelete;
-  final Function validator;
-  final Function onChanged;
-  final int maxValue;
-  final List<ListFieldModel> listFieldModel;
-  String text;
-  TextEditingController textEditingController;
-  bool isEdit;
-  final List<dynamic> model;
-
   @override
   _DSListTextFieldState createState() => _DSListTextFieldState();
 }
 
 class _DSListTextFieldState extends State<DSListTextField> {
-  String _id;
+  String? _id;
   Uuid _uuid = Uuid();
 
   changeValue() {}
@@ -41,34 +41,35 @@ class _DSListTextFieldState extends State<DSListTextField> {
         ListView.builder(
             shrinkWrap: true,
             physics: ScrollPhysics(),
-            itemCount: widget.listFieldModel.length,
+            itemCount: widget.listFieldModel!.length,
             itemBuilder: (BuildContext context, int index) {
               return DSTextField(
                 onPressedDelete: () async {
                   setState(() {
-                    widget.listFieldModel.remove(widget.listFieldModel[index]);
+                    widget.listFieldModel!
+                        .remove(widget.listFieldModel![index]);
                   });
                 },
                 onChanged: () {
-                  for (var x in widget.listFieldModel) {
-                    if (x.textEditingController.text.length > 0) {
+                  for (var x in widget.listFieldModel!) {
+                    if (x.textEditingController!.text.length > 0) {
                       Timer(const Duration(milliseconds: 1000), () {
                         setState(() {
-                          widget.onChanged();
+                          widget.onChanged!();
                         });
                       });
                     }
                   }
                 },
-                listFieldModel: widget.listFieldModel[index],
+                listFieldModel: widget.listFieldModel![index],
                 text: (index + 1).toString(),
-                id: widget.listFieldModel[index].id,
+                id: widget.listFieldModel![index].id,
               );
             }),
         SizedBox(
           height: 16,
         ),
-        widget.listFieldModel.length < widget.maxValue
+        widget.listFieldModel!.length < widget.maxValue!
             ? Container(
                 color: Colors.white,
                 height: 30.0,
@@ -87,8 +88,8 @@ class _DSListTextFieldState extends State<DSListTextField> {
                         setState(() {
                           _id = _uuid.v1();
 
-                          widget.listFieldModel.add(ListFieldModel(
-                              id: _id,
+                          widget.listFieldModel!.add(ListFieldModel(
+                              id: _id!,
                               isEdit: true,
                               textEditingController: TextEditingController()));
                         });

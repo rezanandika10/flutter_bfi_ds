@@ -1,13 +1,13 @@
 part of flutter_ds_bfi;
 
 class DSNudedButton extends StatelessWidget {
-  final String keyValue;
-  final GestureTapCallback onTap;
-  final String text;
-  final DSButtonState buttonState;
-  final double fontSize;
-  final FontWeight fontWeight;
-  final Color color;
+  final String? keyValue;
+  final GestureTapCallback? onTap;
+  final String? text;
+  final DSButtonState? buttonState;
+  final double? fontSize;
+  final FontWeight? fontWeight;
+  final Color? color;
 
   DSNudedButton(
       {this.keyValue,
@@ -38,7 +38,7 @@ class DSNudedButton extends StatelessWidget {
                 children: <Widget>[
                   Flexible(
                     child: Text(
-                      text,
+                      text!,
                       style: TextStyle(
                           fontFamily: DSFont.Poppins,
                           color: buttonState == DSButtonState.Active
